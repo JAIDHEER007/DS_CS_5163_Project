@@ -26,7 +26,7 @@ Tropical cyclones are among the most devastating natural disasters, characterize
 
 - **Main Findings**: The model outperformed traditional methods in terms of accuracy and efficiency, demonstrating the ability of neural networks to manage complex meteorological data. The study showed that using a neural network with properly selected features improves the prediction of the maximum potential intensity of cyclones, even in the presence of non-linear relationships between meteorological variables.
   
-- **Main Experimental Results**: The neural network regression model achieved a mean absolute error (MAE) of **6.72 knots** in predicting maximum potential intensity, outperforming previous statistical models, which had errors of up to **10 knots**.
+- **Main Experimental Results**: The neural network regression model achieved a precision score of around **0.9** in predicting maximum potential intensity, outperforming previous statistical models, which had precision scores lower than 0.9.
 
 ---
 
