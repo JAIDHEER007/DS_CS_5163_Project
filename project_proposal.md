@@ -113,15 +113,27 @@ Tropical cyclones are among the most devastating natural disasters, characterize
    - Perform model tuning using cross-validation to improve performance and prevent overfitting.
    - Compare models based on accuracy, precision, and recall to choose the most effective algorithm.
 
-### 4. **Model Evaluation and Success Metrics**:
-   - **Accuracy**: The proportion of correct predictions among all predictions.
-   - **Mean Absolute Error (MAE)**: A metric to measure the average magnitude of errors between predicted and actual cyclone intensities.
-   - **F1 Score**: A harmonic mean of precision and recall, useful for assessing the model's performance, especially in imbalanced data.
+### 4. Model Evaluation and Success Metrics
 
-### Why These Metrics?
-- **Accuracy** is a fundamental measure to determine how well the model performs overall.
-- **MAE** provides insight into the closeness of the predicted values to actual values for continuous predictions of cyclone intensity.
-- **F1 Score** will be used to evaluate the balance between precision and recall, especially if the dataset has class imbalances (e.g., fewer severe cyclones).
+#### 1. **Accuracy**:
+Accuracy is the ratio of correctly predicted instances to the total instances in the dataset. It gives an overall measure of the model’s performance but can be misleading when the dataset is imbalanced.
+
+**Why Useful**: Accuracy provides a general idea of how well the model is performing across all cyclone intensity classes. It is useful for a quick snapshot of performance, but for this project, it needs to be considered with other metrics, especially since the dataset may have imbalanced classes of cyclone intensities.
+
+#### 2. **Mean Absolute Error (MAE)**:
+MAE measures the average magnitude of prediction errors, showing how far the model's predictions are from the actual values. It works well for continuous variables, such as wind speed, because it gives the average error size in the same units as the predictions.
+
+**Why Useful**: MAE is particularly relevant for this project because it directly tells us how close the predicted cyclone intensity (e.g., wind speed) is to the actual value. Lower MAE values indicate better performance, making it a useful measure of how well the model is estimating cyclone intensity.
+
+#### 3. **Root Mean Squared Error (RMSE)**:
+RMSE is similar to MAE but gives more weight to larger errors. It penalizes large errors more than MAE does, making it more sensitive to outliers or major deviations in predictions.
+
+**Why Useful**: RMSE is beneficial in this project as it highlights large deviations in the model’s cyclone intensity predictions. If the model significantly over- or under-predicts the intensity of a severe cyclone, RMSE will reflect this, helping to identify whether the model struggles with extreme cases.
+
+#### 4. **Relative Absolute Error (RAE)**:
+RAE compares the total absolute error of the model to the error of a simple baseline model, typically the mean of the target variable. It shows how well the model performs relative to a naive prediction.
+
+**Why Useful**: RAE is important for this project because it benchmarks the model's performance against a simple prediction (e.g., always predicting the mean cyclone intensity). A low RAE indicates that the model is significantly better than the baseline, which adds context to its predictive power.
 
 ---
 
